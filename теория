@@ -37,13 +37,39 @@ cd  bin                 папка bin
 my sql -u root -p           -u - username, -p-password
 пишем пароль
 SHOW DATABASES;
-
-
-
+CREATE DATABASE sql_course;         создать, название базы данных
+DROP DATABASE sql_course;           удалить базу данных, название
+SHOW DATABASES;
+USE sql_course;
+show tables;                        покажи таблицы, к-е были созданы в этой базе данных
 
 Для того, чтобы создать таблицу: в скобках указываются поля, к-е будут в этой таблице(колонки)
 my sql> CREATE TABLE teacher(                             НАЗВАНИЕ ТАБЛИЦЫ
     - > id INT AUTO_INCREMENT PRIMARY KEY,                СОЗДАЁМ УНИКАЛЬНЫЙ ИДЕНТИФИКАТОР, К-Й БУДЕТ ЧИСЛОВОГО ЗНАЧЕНИЯ(int), БУДЕТ АВТОИНКРЕМЕНТИРОВАТЬСЯ, И ЭТО ПЕРВИЧНЫЙ КЛЮЧ
-    - > surname VARCHAR(255) NOT NULL                     2Е ПОЛЕ - ЭТО ФАМИЛИЯ УЧИТЕЛЯ, КАК СТРОКОВОЕ ЗНАЧЕНИЕ УКАЗЫВАЕМ varchar, И ОНО НЕ МОЖЕТ БЫТЬ ПУСТЫМ not null      VARCHAR(255) stores 255 characters, which may be more than 255 bytes.
+    - > surname VARCHAR(255) NOT NULL,                    2Е ПОЛЕ - ЭТО ФАМИЛИЯ УЧИТЕЛЯ, КАК СТРОКОВОЕ ЗНАЧЕНИЕ УКАЗЫВАЕМ varchar, И ОНО НЕ МОЖЕТ БЫТЬ ПУСТЫМ not null      VARCHAR(255) stores 255 characters, which may be more than 255 bytes.
     - > );
-         
+
+show tables;                        теперь у нас есть 1 таблица в этой базе данных
+show columns FROM teacher;
+
+CREATE TABLE lesson(
+    - > id INT AUTO_INCREMENT PRIMARY KEY, 
+    - > name VARCHAR(255) NOT NULL,
+    - > teacher_id INT NOT NULL,                              тип данных в таблице 1 ко многим => делаем ссылку на таблицу с учителями
+    - > FOREIGN KEY (teacher_id) references teacher(id);      создаём поле(в скобках), ссылаемся на таблицу, с ко-й этот внешний ключ будет связывать
+
+INSERT INTO teacher (surname) values ("Ивашкин") вставим(наполним таблицу данными)? назв-е таблицы, поле к-е хотим вставить, после values указываются знач-я в том же порядке
+INSERT INTO teacher (surname) values ("Вуд")
+INSERT INTO teacher (surname) values ("Мелони")
+
+SELECT * FROM teacher;                                       делаем запрос на получение данных, * - это название поля из таблицы
+
+SELECT id, surname, surname FROM teacher;
+
+SELECT DISTINCT surname FROM teacher;                        для нахождения уникального значения поля из таблицы, тоисть например в случаях, когда фамилии могут повторяться
+
+SELECT * FROM teacher WHERE id = 1;                         хотим получить данные по какому-то условию ДОПУСТИМ ХОТИМ ПОЛУЧИТЬ ЗАПИСЬ С ID, равным 1
+
+SELECT * FROM teacher WHERE id > 3;                         или все значения: больше-меньше
+
+              если поле, к-е мы ищем, является строчным
