@@ -28,6 +28,22 @@
                                                       2             2
                                                       3             3
 
-My SQL: изучи, какой код нужно написать, чтобы запустить программу
-Для того, чтобы создать таблицу:
-my sqlCREATE TABLE teacher(
+My SQL (БУДЕМ ИСПОЛЬЗОВАТЬ В КАЧЕСТВЕ СИСТЕМЫ БАЗЫ ДАННЫХ, ) : изучи, какой код нужно написать, чтобы запустить программу
+
+cd "Programm Files" откроем папку - вниз Enter по-нарастающей
+cd MySQL
+cd "My SQL Server 8.0"
+cd  bin                 папка bin
+my sql -u root -p           -u - username, -p-password
+пишем пароль
+SHOW DATABASES;
+
+
+
+
+Для того, чтобы создать таблицу: в скобках указываются поля, к-е будут в этой таблице(колонки)
+my sql> CREATE TABLE teacher(                             НАЗВАНИЕ ТАБЛИЦЫ
+    - > id INT AUTO_INCREMENT PRIMARY KEY,                СОЗДАЁМ УНИКАЛЬНЫЙ ИДЕНТИФИКАТОР, К-Й БУДЕТ ЧИСЛОВОГО ЗНАЧЕНИЯ(int), БУДЕТ АВТОИНКРЕМЕНТИРОВАТЬСЯ, И ЭТО ПЕРВИЧНЫЙ КЛЮЧ
+    - > surname VARCHAR(255) NOT NULL                     2Е ПОЛЕ - ЭТО ФАМИЛИЯ УЧИТЕЛЯ, КАК СТРОКОВОЕ ЗНАЧЕНИЕ УКАЗЫВАЕМ varchar, И ОНО НЕ МОЖЕТ БЫТЬ ПУСТЫМ not null      VARCHAR(255) stores 255 characters, which may be more than 255 bytes.
+    - > );
+         
