@@ -112,19 +112,21 @@ INSERT INTO lesson (name, teacher_id) VALUES ("Матеша", 1), ("Информ
                                                          Виды объединений JOIN      INNER JOIN (внутреннее об-е)                   /  OUTER JOIN (внешнее об-е)
                                                                                     попадают в выборку лишь уч-ля и уроки парами     LEFT OUTER JOIN (попадают в выборку все учителя)/ RIGHT OUTER JOIN (попадают в выборку все уроки)
                                                          FULL JOIN  в выборку попадают абсолютно все знач-я
-SELECT teacher.surname, lesson.name                      берём таблицу и поле из данной таблицы
+
+SELECT teacher.surname, lesson.name FROM teacher INNER JOIN lesson ON teacher_id = lesson.teacher_id;                       берём таблицу и поле из данной таблицы, ключеое слово ON, получили все парные знач-я левого и правого столбцов 
                                                          
+SELECT teacher.surname, lesson.name FROM teacher LEFT OUTER JOIN lesson ON teacher_id = lesson.teacher_id;                  получили абсолютно все знач-я левого столбца, даже без пары  } ЭТО БЫЛО ГОРИЗОНТАЛЬНОЕ ОБЪ-Е 2Х ТАБЛИЦ
+SELECT teacher.surname, lesson.name FROM teacher RIGHT OUTER JOIN lesson ON teacher_id = lesson.teacher_id;
 
+                                 UNION JOIN              ЩА БУИТ ВЕРТИКАЛЬНОЕ ОБ-Е
+SELECT * FROM teacher UNION SELECT * FROM lesson;         так получаем все записи в 1й табл-це, но есть проблемы с именованием колонок
 
+SELECT AVG(age) FROM teacher;           функции с пом-ю к-х можа получать результат вычислений, AVG(как sample) на месте функция(любая) в данном случа получающая среднее знач-е из поля age
+SELECT MAX(age), MIN(age) FROM teacher; 
 
+SELECT SUN(age) FROM teacher;           считает сумму всех знач-й данного поля
 
+SELECT age, COUNT(age) FROM teacher;            сгруппируем
 
+SELECT age, COUNT(age) FROM teacher GROUP BY age;   получаем сгруппированную по знач-м таблицу    
 
-
-
-
-
-
-
-
- 
