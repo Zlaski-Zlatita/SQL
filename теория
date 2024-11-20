@@ -107,7 +107,20 @@ SELECT * FROM teacher WHERE age BETWEEN 145 and 567;
 
 DELETE FROM teacher WHERE id = 90;
 
-INSERT INTO lesson (name, teacher_id) VALUES ("Матеша", 1), ("Информатика", 9)              добавим несколько записей в таблицу lesson, вставить (INSERT), ("предмет", ссылка на существующего учителя int)
+INSERT INTO lesson (name, teacher_id) VALUES ("Матеша", 1), ("Информатика", 9);              добавим несколько записей в таблицу lesson, вставить (INSERT), ("предмет", ссылка на существующего учителя int)
+
+                                                         Виды объединений JOIN      INNER JOIN (внутреннее об-е)                   /  OUTER JOIN (внешнее об-е)
+                                                                                    попадают в выборку лишь уч-ля и уроки парами     LEFT OUTER JOIN (попадают в выборку все учителя)/ RIGHT OUTER JOIN (попадают в выборку все уроки)
+                                                         FULL JOIN  в выборку попадают абсолютно все знач-я
+SELECT teacher.surname, lesson.name                      берём таблицу и поле из данной таблицы
+                                                         
+
+
+
+
+
+
+
 
 
 
