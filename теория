@@ -68,8 +68,42 @@ SELECT id, surname, surname FROM teacher;
 
 SELECT DISTINCT surname FROM teacher;                        для нахождения уникального значения поля из таблицы, тоисть например в случаях, когда фамилии могут повторяться
 
-SELECT * FROM teacher WHERE id = 1;                         хотим получить данные по какому-то условию ДОПУСТИМ ХОТИМ ПОЛУЧИТЬ ЗАПИСЬ С ID, равным 1
+SELECT * FROM teacher WHERE id = 1;                          хотим получить данные по какому-то условию ДОПУСТИМ ХОТИМ ПОЛУЧИТЬ ЗАПИСЬ С ID, равным 1
 
-SELECT * FROM teacher WHERE id > 3;                         или все значения: больше-меньше
+SELECT * FROM teacher WHERE id > 3;                          или все значения: больше-меньше
 
-              если поле, к-е мы ищем, является строчным
+SELECT * FROM teacher WHERE surname = "Вуд"                  если поле, к-е мы ищем, является строчным => получаем всех с данной фамилией
+
+SELECT * FROM teacher WHERE surname = "Вуд" LIMIT 2          можем делать ограничения по количеству создаваемых записей, 2 человека с данной фамилией
+
+SELECT * FROM teacher LIMIT 5                                выдаёт x(5) рандомных значний
+
+SELECT id AS Идентификатор', surname AS 'Фамилия' FROM teacher            не хотим, шо бы колонки назывались id и surname (заводские настройки)
+
+SELECT * FROM teacher ORDER BY surname;                      сортировка данных, сортировка выборки(ORDER BY) в алфавитном порядке/по возрастанию и т.п.
+
+SELECT * FROM teacher ORDER BY id;
+
+SELECT * FROM teacher ORDER BY id DESC;                      хотим, чтобы данные пришли в обратном порядке(DESC)
+
+ALTER TABLE teacher ADD age INT;                             добавим ещё 1 поле в существующую таблицу (ALTER), добавить в таблицу x  поле  n в значении *
+
+UPDATE teacher SET age = 20 where id = 3;                    обновление данных в существующей таблице, установить (SET)
+
+UPDATE teacher SET age = 20;                                 если не указывать условие, то будут изменены все существующие значения в колонке
+
+SELECT * FROM teacher WHERE surname LIKE "%ов"              задаём шаблон, по ко-му будет происходить поиск (LIKE "%ов"), в таблице вернутся все учителя с фамилией на -ов// etc (-ин)
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
