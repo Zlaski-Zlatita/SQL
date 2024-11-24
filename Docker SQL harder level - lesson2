@@ -3,3 +3,91 @@
 Для подключения в pgAdmin нужно нажать кнопку Add Server и во вкладке connection. В поле Host параметр LocalHost. Post 5432
 Открыть раздел таблицы.
 
+Рассмотрим программный код:FLOAT
+
+if 0.3 == 0.3: 
+    print('YES') 
+else: 
+    print('NO')
+
+Результатом выполнения такого кода будет как и полагается YES.
+
+А теперь рассмотрим программный код:
+
+num = 0.1 + 0.1 + 0.1 
+
+if num == 0.3: 
+   print('YES') 
+else: 
+   print('NO')
+
+чтобы сравнивать два float числа, мы должны использовать такой код:
+
+num = 0.1 + 0.1 + 0.1 
+eps = 0.000000001        # точность сравнения 
+
+if abs(num - 0.3) < eps: # число num отличается от числа 0.3 менее чем 0.000000001 
+   print('YES') 
+else: 
+   print('NO')
+
+DECIMAL 
+
+from decimal import * 
+
+d1 = Decimal(1) 
+d2 = Decimal(567) 
+d3 = Decimal(-93) 
+d4 = Decimal('12345') 
+d5 = Decimal('52.198') 
+
+print(d1, d2, d3, d4, d5, sep='\n')
+
+from decimal import * 
+
+num1 = Decimal('5.2') 
+num2 = Decimal('2.3') 
+
+print(num1 + num2) 
+print(num1 - num2) 
+print(num1 * num2) 
+print(num1 / num2) 
+print(num1 // num2) 
+print(num1 ** num2)
+
+
+
+это выводит числа FLOAT 
+
+from decimal import * 
+from math import * 
+
+num1 = Decimal('1.44') 
+num2 = Decimal('0.523') 
+
+print(sqrt(num1)) 
+print(sin(num2)) 
+print(log(num1 + num2))
+
+а это десятичные числа DECIMAL 
+
+sqrt()вычисляет квадратный корень из Decimal числа
+exp()возвращает exex для Decimal числа
+ln()вычисляет натуральный логарифм (по основанию ee) Decimal числа
+log10()вычисляет десятичный логарифм (по основанию 1010) Decimal числа
+
+from decimal import * 
+
+num = Decimal('10.0') 
+
+print(num.sqrt()) 
+print(num.exp()) 
+print(num.ln()) 
+print(num.log10())
+
+
+Тип данных Decimal также содержит полезный метод as_tuple() который возвращает кортеж из 33 элементов:
+
+sign – знак числа (00 для положительного числа и 11 для отрицательного числа);digits – цифры числа;exponent – значение экспоненты (количество цифр после точки, умноженное на −1−1),
+
+
