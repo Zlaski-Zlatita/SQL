@@ -1,0 +1,5 @@
+Создание таблиц               PostgreSQL (+ pgAdmin)
+из pgAdmin ужно подключиться к PostgreSQL
+Для подключения в pgAdmin нужно нажать кнопку Add Server и во вкладке connection. В поле Host параметр LocalHost. Post 5432
+Открыть раздел таблицы.
+
