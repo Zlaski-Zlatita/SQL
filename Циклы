@@ -51,6 +51,83 @@ h
 o 
 n
 
+Приведённый ниже код:
+
+ip = '192.168.1.24' 
+numbers = ip.split('.') # указываем явно разделитель 
+print(numbers)
+
+выводит:
+
+['192', '168', '1', '24']
+
+Метод join() собирает строку из элементов списка
+
+words = ['Python', 'is', 'the', 'most', 'powerful', 'language'] 
+s = ' '.join(words) 
+print(s)
+
+выводит:
+
+Python is the most powerful language
+
+Рассмотрим ещё пару примеров:
+
+words = ['Мы', 'учим', 'язык', 'Python'] 
+print('*'.join(words)) 
+print('-'.join(words)) 
+print('?'.join(words)) 
+print('!'.join(words)) 
+print('*****'.join(words)) 
+print('abc'.join(words)) 
+print('123'.join(words))
+
+Приведённый выше код выводит:
+
+Мы*учим*язык*Python 
+Мы-учим-язык-Python 
+Мы?учим?язык?Python 
+Мы!учим!язык!Python 
+Мы*****учим*****язык*****Python 
+МыabcучимabcязыкabcPython 
+Мы123учим123язык123Python
+
+s = 'I love Python' 
+words1 = s.split() 
+words2 = s.split(' ') 
+print(words1) print(words2)
+
+ выводит:
+
+['I', 'love', 'Python'] 
+['I', 'love', '', 'Python']
+
+Если в строке встречаются последовательные разделители, то они будут считаться как отдельные разделители, и между ними будет создана пустая строка ('').
+
+Методы split() и join() являются строковыми методами, они не могут применяться к спискам!
+print([1, 2].split()) 
+
+приводит к возникновению ошибки:
+
+AttributeError: 'list' object has no attribute 'split'
+
+s = '+'.join('pygen') 
+print(s)
+
+выводит:
+
+p+y+g+e+n
+
+
+
+
+
+
+
+
+
+
+
 
 
 
