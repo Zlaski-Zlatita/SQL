@@ -1,3 +1,13 @@
+
+
+names = ['Gvido', 'Roman', 'Timur'] 
+position = names.index('Timur') 
+print(position)
+
+выведет:
+
+2
+
 names = ['Gvido', 'Roman', 'Timur'] 
 if 'Anders' in names: 
    position = names.index('Anders') 
