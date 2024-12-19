@@ -74,3 +74,9 @@ print(names_copy)
 выведет:
 
 ['Gvido', 'Roman', 'Timur'] ['Gvido', 'Roman', 'Timur']
+
+Аналогичного результата можно достичь с помощью срезов или функции list():
+
+names = ['Gvido', 'Roman', 'Timur'] 
+names_copy1 = list(names) # создаем поверхностную копию с помощью функции list() 
+names_copy2 = names[:] # создаем поверхностную копию с помощью среза от начала до конца
