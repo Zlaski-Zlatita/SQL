@@ -1,5 +1,3 @@
-
-
 names = ['Gvido', 'Roman', 'Timur'] 
 position = names.index('Timur') 
 print(position)
@@ -45,4 +43,34 @@ print(cnt3)
 
 выведет:
 
-3 1 0
+3 
+1 
+0
+
+Метод reverse() меняет порядок на противоположный.
+names = ['Gvido', 'Roman', 'Timur'] 
+names.reverse() 
+print(names)
+
+выведет:
+
+['Timur', 'Roman', 'Gvido']
+
+Метод clear() удаляет все элементы из списка.
+names = ['Gvido', 'Roman', 'Timur'] 
+names.clear() 
+print(names)
+
+выведет:
+
+[]
+
+names = ['Gvido', 'Roman', 'Timur'] 
+names_copy = names.copy() # создаем поверхностную копию списка names 
+
+print(names) 
+print(names_copy)
+
+выведет:
+
+['Gvido', 'Roman', 'Timur'] ['Gvido', 'Roman', 'Timur']
